@@ -1,0 +1,17 @@
+
+#build instruction
+docker image build -t nb-redis -f Dockerfile .
+
+#source code
+http://download.redis.io/releases/redis-4.0.11.tar.gz
+
+#run image with port mapping
+docker docker run --name some-redis -d -p 6379:6379 nb-redis
+
+#map configure files
+docker run --name some-redis -d -p 6379:6379 -v HOST_CONF_PATH:/etc/redis nb-redis
+
+#map external volume for data
+docker run --name some-redis -d -p 6379:6379 -v HOST_DATA_PATH:/data nb-redis
+
+

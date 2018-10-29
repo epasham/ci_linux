@@ -1,0 +1,62 @@
+2018-09-19 09:56:06.129 [cluster-ClusterId{value='5ba0050852faff0001ce9453', description='null'}-192.168.32.75:27017] o.m.d.cluster INFO  - Exception in monitor thread while connecting to server 192.168.32.75:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:62) ~[mongodb-driver-core-3.6.3.jar!/:?]
+	at com.mongodb.connection.InternalStreamConnection.open(InternalStreamConnection.java:126) ~[mongodb-driver-core-3.6.3.jar!/:?]
+	at com.mongodb.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:128) [mongodb-driver-core-3.6.3.jar!/:?]
+	at java.lang.Thread.run(Unknown Source) [?:?]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source) ~[?:?]
+	at java.net.SocksSocketImpl.connect(Unknown Source) ~[?:?]
+	at java.net.Socket.connect(Unknown Source) ~[?:?]
+	at com.mongodb.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:59) ~[mongodb-driver-core-3.6.3.jar!/:?]
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:57) ~[mongodb-driver-core-3.6.3.jar!/:?]
+	... 3 more
+2018-09-19 09:56:07.241 [cluster-ClusterId{value='5ba0050952faff0001ce9454', description='null'}-192.168.32.75:27017] o.m.d.cluster INFO  - Exception in monitor thread while connecting to server 192.168.32.75:27017
+com.mongodb.MongoSocketReadException: Exception receiving message
+	at com.mongodb.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:536) ~[mongodb-driver-core-3.6.3.jar!/:?]
+	at com.mongodb.connection.InternalStreamConnection.receiveMessage(InternalStreamConnection.java:421) ~[mongodb-driver-core-3.6.3.jar!/:?]
+	at com.mongodb.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:290) ~[mongodb-driver-core-3.6.3.jar!/:?]
+	at com.mongodb.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:255) ~[mongodb-driver-core-3.6.3.jar!/:?]
+	at com.mongodb.connection.CommandHelper.sendAndReceive(CommandHelper.java:84) ~[mongodb-driver-core-3.6.3.jar!/:?]
+	at com.mongodb.connection.CommandHelper.executeCommand(CommandHelper.java:34) ~[mongodb-driver-core-3.6.3.jar!/:?]
+	at com.mongodb.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:91) ~[mongodb-driver-core-3.6.3.jar!/:?]
+	at com.mongodb.connection.InternalStreamConnectionInitializer.initialize(InternalStreamConnectionInitializer.java:51) ~[mongodb-driver-core-3.6.3.jar!/:?]
+	at com.mongodb.connection.InternalStreamConnection.open(InternalStreamConnection.java:127) ~[mongodb-driver-core-3.6.3.jar!/:?]
+	at com.mongodb.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:128) [mongodb-driver-core-3.6.3.jar!/:?]
+	at java.lang.Thread.run(Unknown Source) [?:?]
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(Unknown Source) ~[?:?]
+	at java.net.SocketInputStream.read(Unknown Source) ~[?:?]
+	at com.mongodb.connection.SocketStream.read(SocketStream.java:84) ~[mongodb-driver-core-3.6.3.jar!/:?]
+	at com.mongodb.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:547) ~[mongodb-driver-core-3.6.3.jar!/:?]
+	at com.mongodb.connection.InternalStreamConnection.receiveMessage(InternalStreamConnection.java:418) ~[mongodb-driver-core-3.6.3.jar!/:?]
+	... 9 more
+2018-09-19 09:56:16.210 [cluster-ClusterId{value='5ba0050852faff0001ce9453', description='null'}-192.168.32.75:27017] o.m.d.connection INFO  - Opened connection [connectionId{localValue:9, serverValue:17}] to 192.168.32.75:27017
+2018-09-19 09:56:16.210 [cluster-ClusterId{value='5ba0050852faff0001ce9453', description='null'}-192.168.32.75:27017] o.m.d.cluster INFO  - Monitor thread successfully connected to server with description ServerDescription{address=192.168.32.75:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 6, 4]}, minWireVersion=0, maxWireVersion=6, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=244360, setName='rs', canonicalAddress=192.168.32.75:27017, hosts=[192.168.32.75:27017], passives=[], arbiters=[], primary='192.168.32.75:27017', tagSet=TagSet{[]}, electionId=7fffffff0000000000000003, setVersion=1, lastWriteDate=Wed Sep 19 09:56:16 UTC 2018, lastUpdateTimeNanos=681626966662586}
+2018-09-19 09:56:16.210 [cluster-ClusterId{value='5ba0050852faff0001ce9453', description='null'}-192.168.32.75:27017] o.m.d.cluster INFO  - Setting max election id to 7fffffff0000000000000003 from replica set primary 192.168.32.75:27017
+2018-09-19 09:56:16.210 [cluster-ClusterId{value='5ba0050852faff0001ce9453', description='null'}-192.168.32.75:27017] o.m.d.cluster INFO  - Discovered replica set primary 192.168.32.75:27017
+2018-09-19 09:56:17.268 [cluster-ClusterId{value='5ba0050952faff0001ce9454', description='null'}-192.168.32.75:27017] o.m.d.connection INFO  - Opened connection [connectionId{localValue:10, serverValue:20}] to 192.168.32.75:27017
+2018-09-19 09:56:17.269 [cluster-ClusterId{value='5ba0050952faff0001ce9454', description='null'}-192.168.32.75:27017] o.m.d.cluster INFO  - Monitor thread successfully connected to server with description ServerDescription{address=192.168.32.75:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 6, 4]}, minWireVersion=0, maxWireVersion=6, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=292002, setName='rs', canonicalAddress=192.168.32.75:27017, hosts=[192.168.32.75:27017], passives=[], arbiters=[], primary='192.168.32.75:27017', tagSet=TagSet{[]}, electionId=7fffffff0000000000000003, setVersion=1, lastWriteDate=Wed Sep 19 09:56:16 UTC 2018, lastUpdateTimeNanos=681628025545551}
+2018-09-19 09:56:17.269 [cluster-ClusterId{value='5ba0050952faff0001ce9454', description='null'}-192.168.32.75:27017] o.m.d.cluster INFO  - Setting max election id to 7fffffff0000000000000003 from replica set primary 192.168.32.75:27017
+2018-09-19 09:56:17.269 [cluster-ClusterId{value='5ba0050952faff0001ce9454', description='null'}-192.168.32.75:27017] o.m.d.cluster INFO  - Discovered replica set primary 192.168.32.75:27017
+2018-09-19 09:56:26.556 [quartzScheduler_Worker-6] o.m.d.connection INFO  - Closed connection [connectionId{localValue:5, serverValue:83398}] to 192.168.32.75:27017 because there was a socket exception raised on another connection from this pool.
+2018-09-19 09:56:26.557 [quartzScheduler_Worker-6] o.m.d.connection INFO  - Closed connection [connectionId{localValue:2, serverValue:83395}] to 192.168.32.75:27017 because there was a socket exception raised on another connection from this pool.
+2018-09-19 09:56:26.572 [quartzScheduler_Worker-2] o.m.d.connection INFO  - Closed connection [connectionId{localValue:6, serverValue:83399}] to 192.168.32.75:27017 because there was a socket exception raised on another connection from this pool.
+2018-09-19 09:56:26.574 [quartzScheduler_Worker-2] o.m.d.connection INFO  - Closed connection [connectionId{localValue:4, serverValue:83397}] to 192.168.32.75:27017 because there was a socket exception raised on another connection from this pool.
+2018-09-19 09:56:26.614 [quartzScheduler_Worker-10] o.m.d.connection INFO  - Opened connection [connectionId{localValue:12, serverValue:34}] to 192.168.32.75:27017
+2018-09-19 09:56:26.614 [quartzScheduler_Worker-6] o.m.d.connection INFO  - Opened connection [connectionId{localValue:11, serverValue:33}] to 192.168.32.75:27017
+2018-09-19 09:56:26.632 [quartzScheduler_Worker-2] o.m.d.connection INFO  - Opened connection [connectionId{localValue:13, serverValue:35}] to 192.168.32.75:27017
+2018-09-19 18:15:22.013 [pool-2-thread-3] AMQPTaskGateway INFO  - Received a task request from RMClient on prepared_tasks, redeliver? false
+2018-09-19 18:15:22.088 [pool-2-thread-3] AMQPTaskGateway INFO  - Flowengine Taskgateway received a content=task_message_content_type_task for selftaskId= dbf7de80-74c8-4602-bd4b-0dfa815989d9
+2018-09-19 18:15:22.143 [pool-4-thread-1] TaskController INFO  - selectBestXFAgent successfully selected the best XFAgent worker to execute this task: dbf7de80-74c8-4602-bd4b-0dfa815989d9 
+2018-09-19 18:15:22.190 [pool-2-thread-4] TaskStatusMessageHandler INFO  - Received a task status request on nb_flowengine_task_status_queue, redeliver? false
+2018-09-19 18:15:22.190 [pool-2-thread-4] TaskStatusMessageHandler INFO  - Received task status message task_message_content_type_execution_begin for selfTaskId=dbf7de80-74c8-4602-bd4b-0dfa815989d9 rootTaskId=dbf7de80-74c8-4602-bd4b-0dfa815989d9 
+2018-09-19 18:15:22.192 [pool-2-thread-4] TaskController INFO  - Notify taskFlow=dbf7de80-74c8-4602-bd4b-0dfa815989d9 begin
+2018-09-19 18:15:22.196 [pool-2-thread-3] TaskQueueManagerImpl INFO  - flowengine received taskResult 0 back from XFAgent worker for taskid dbf7de80-74c8-4602-bd4b-0dfa815989d9.
+2018-09-19 18:15:23.331 [pool-2-thread-4] TaskStatusMessageHandler INFO  - Received a task status request on nb_flowengine_task_status_queue, redeliver? false
+2018-09-19 18:15:23.332 [pool-2-thread-4] TaskStatusMessageHandler INFO  - Received task status message task_message_content_type_execution_end for selfTaskId=dbf7de80-74c8-4602-bd4b-0dfa815989d9 rootTaskId=dbf7de80-74c8-4602-bd4b-0dfa815989d9 
+2018-09-19 18:15:23.365 [pool-2-thread-4] TaskController INFO  - Notify taskFlow=dbf7de80-74c8-4602-bd4b-0dfa815989d9 end
+2018-09-19 18:15:26.596 [pool-2-thread-3] CommonUtil INFO  - ##### Flowengine successfully received a XFAgent update msg from worker, the temporarily cached taskCount 1 on this server will be reset to 0.

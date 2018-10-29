@@ -1,0 +1,10 @@
+2018-09-23 07:00:42.212 [quartzScheduler_Worker-3] c.n.x.f.s.ScheduledJobTaskRunner INFO  - send parameters to queue for jobId=f2727162-b070-4989-8827-c25e05cf6136, taskId=5709e964-cf18-4e51-990e-0d9ce3c8dd94
+2018-09-23 07:00:42.239 [pool-4-thread-1] TaskController INFO  - selectBestXFAgent successfully selected the best XFAgent worker to execute this task: 5709e964-cf18-4e51-990e-0d9ce3c8dd94 
+2018-09-23 07:00:42.300 [pool-2-thread-4] TaskStatusMessageHandler INFO  - Received a task status request on nb_flowengine_task_status_queue, redeliver? false
+2018-09-23 07:00:42.300 [pool-2-thread-4] TaskStatusMessageHandler INFO  - Received task status message task_message_content_type_execution_begin for selfTaskId=5709e964-cf18-4e51-990e-0d9ce3c8dd94 rootTaskId=5709e964-cf18-4e51-990e-0d9ce3c8dd94 
+2018-09-23 07:00:42.303 [pool-2-thread-4] TaskController INFO  - Notify taskFlow=5709e964-cf18-4e51-990e-0d9ce3c8dd94 begin
+2018-09-23 07:00:42.327 [pool-2-thread-3] TaskQueueManagerImpl INFO  - flowengine received taskResult 0 back from XFAgent worker for taskid 5709e964-cf18-4e51-990e-0d9ce3c8dd94.
+2018-09-23 07:00:42.466 [pool-2-thread-4] TaskStatusMessageHandler INFO  - Received a task status request on nb_flowengine_task_status_queue, redeliver? false
+2018-09-23 07:00:42.466 [pool-2-thread-4] TaskStatusMessageHandler INFO  - Received task status message task_message_content_type_execution_end for selfTaskId=5709e964-cf18-4e51-990e-0d9ce3c8dd94 rootTaskId=5709e964-cf18-4e51-990e-0d9ce3c8dd94 
+2018-09-23 07:00:42.479 [pool-2-thread-4] TaskController INFO  - Notify taskFlow=5709e964-cf18-4e51-990e-0d9ce3c8dd94 end
+2018-09-23 07:00:44.322 [pool-2-thread-3] CommonUtil INFO  - ##### Flowengine successfully received a XFAgent update msg from worker, the temporarily cached taskCount 1 on this server will be reset to 0.

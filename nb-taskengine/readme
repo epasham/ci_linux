@@ -1,0 +1,12 @@
+
+#build instruction
+docker image build -t nb-taskengine -f Dockerfile .
+
+#source code
+Precompiled jar file.
+
+#run image. note: to configure taskengine, modify taskengine.properties on host under HOST_CONF_PATH and mount to container.
+docker run --name some-taskengine -v HOST_CONF_PATH:/home/netbrain/taskengine/conf -v HOST_LOG_PATH:/home/netbrain/taskengine/logs nb-taskengine
+
+
+

@@ -1,0 +1,54 @@
+2018-09-20 14:12:26.707 [cluster-ClusterId{value='5ba1102b5f150300015d5088', description='null'}-192.168.32.75:27117] o.m.d.cluster INFO  - Exception in monitor thread while connecting to server 192.168.32.75:27117
+com.mongodb.MongoSocketReadException: Exception receiving message
+	at com.mongodb.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:536) ~[mongodb-driver-core-3.6.3.jar!/:?]
+	at com.mongodb.connection.InternalStreamConnection.receiveMessage(InternalStreamConnection.java:421) ~[mongodb-driver-core-3.6.3.jar!/:?]
+	at com.mongodb.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:290) ~[mongodb-driver-core-3.6.3.jar!/:?]
+	at com.mongodb.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:255) ~[mongodb-driver-core-3.6.3.jar!/:?]
+	at com.mongodb.connection.CommandHelper.sendAndReceive(CommandHelper.java:84) ~[mongodb-driver-core-3.6.3.jar!/:?]
+	at com.mongodb.connection.CommandHelper.executeCommand(CommandHelper.java:34) ~[mongodb-driver-core-3.6.3.jar!/:?]
+	at com.mongodb.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:91) ~[mongodb-driver-core-3.6.3.jar!/:?]
+	at com.mongodb.connection.InternalStreamConnectionInitializer.initialize(InternalStreamConnectionInitializer.java:51) ~[mongodb-driver-core-3.6.3.jar!/:?]
+	at com.mongodb.connection.InternalStreamConnection.open(InternalStreamConnection.java:127) ~[mongodb-driver-core-3.6.3.jar!/:?]
+	at com.mongodb.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:128) [mongodb-driver-core-3.6.3.jar!/:?]
+	at java.lang.Thread.run(Unknown Source) [?:?]
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(Unknown Source) ~[?:?]
+	at java.net.SocketInputStream.read(Unknown Source) ~[?:?]
+	at com.mongodb.connection.SocketStream.read(SocketStream.java:84) ~[mongodb-driver-core-3.6.3.jar!/:?]
+	at com.mongodb.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:547) ~[mongodb-driver-core-3.6.3.jar!/:?]
+	at com.mongodb.connection.InternalStreamConnection.receiveMessage(InternalStreamConnection.java:418) ~[mongodb-driver-core-3.6.3.jar!/:?]
+	... 9 more
+2018-09-20 14:12:26.980 [cluster-ClusterId{value='5ba1102c5f150300015d5089', description='null'}-192.168.32.75:27117] o.m.d.cluster INFO  - Exception in monitor thread while connecting to server 192.168.32.75:27117
+com.mongodb.MongoSocketReadException: Exception receiving message
+	at com.mongodb.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:536) ~[mongodb-driver-core-3.6.3.jar!/:?]
+	at com.mongodb.connection.InternalStreamConnection.receiveMessage(InternalStreamConnection.java:421) ~[mongodb-driver-core-3.6.3.jar!/:?]
+	at com.mongodb.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:290) ~[mongodb-driver-core-3.6.3.jar!/:?]
+	at com.mongodb.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:255) ~[mongodb-driver-core-3.6.3.jar!/:?]
+	at com.mongodb.connection.CommandHelper.sendAndReceive(CommandHelper.java:84) ~[mongodb-driver-core-3.6.3.jar!/:?]
+	at com.mongodb.connection.CommandHelper.executeCommand(CommandHelper.java:34) ~[mongodb-driver-core-3.6.3.jar!/:?]
+	at com.mongodb.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:91) ~[mongodb-driver-core-3.6.3.jar!/:?]
+	at com.mongodb.connection.InternalStreamConnectionInitializer.initialize(InternalStreamConnectionInitializer.java:51) ~[mongodb-driver-core-3.6.3.jar!/:?]
+	at com.mongodb.connection.InternalStreamConnection.open(InternalStreamConnection.java:127) ~[mongodb-driver-core-3.6.3.jar!/:?]
+	at com.mongodb.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:128) [mongodb-driver-core-3.6.3.jar!/:?]
+	at java.lang.Thread.run(Unknown Source) [?:?]
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(Unknown Source) ~[?:?]
+	at java.net.SocketInputStream.read(Unknown Source) ~[?:?]
+	at com.mongodb.connection.SocketStream.read(SocketStream.java:84) ~[mongodb-driver-core-3.6.3.jar!/:?]
+	at com.mongodb.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:547) ~[mongodb-driver-core-3.6.3.jar!/:?]
+	at com.mongodb.connection.InternalStreamConnection.receiveMessage(InternalStreamConnection.java:418) ~[mongodb-driver-core-3.6.3.jar!/:?]
+	... 9 more
+2018-09-20 14:12:36.793 [cluster-ClusterId{value='5ba1102b5f150300015d5088', description='null'}-192.168.32.75:27117] o.m.d.connection INFO  - Opened connection [connectionId{localValue:13, serverValue:26}] to 192.168.32.75:27117
+2018-09-20 14:12:36.794 [cluster-ClusterId{value='5ba1102b5f150300015d5088', description='null'}-192.168.32.75:27117] o.m.d.cluster INFO  - Monitor thread successfully connected to server with description ServerDescription{address=192.168.32.75:27117, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 6, 4]}, minWireVersion=0, maxWireVersion=6, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=760792, setName='rs', canonicalAddress=192.168.32.75:27117, hosts=[192.168.32.75:27117], passives=[], arbiters=[], primary='192.168.32.75:27117', tagSet=TagSet{[]}, electionId=7fffffff0000000000000003, setVersion=1, lastWriteDate=Thu Sep 20 14:12:36 UTC 2018, lastUpdateTimeNanos=783407550264177}
+2018-09-20 14:12:36.794 [cluster-ClusterId{value='5ba1102b5f150300015d5088', description='null'}-192.168.32.75:27117] o.m.d.cluster INFO  - Setting max election id to 7fffffff0000000000000003 from replica set primary 192.168.32.75:27117
+2018-09-20 14:12:36.794 [cluster-ClusterId{value='5ba1102b5f150300015d5088', description='null'}-192.168.32.75:27117] o.m.d.cluster INFO  - Discovered replica set primary 192.168.32.75:27117
+2018-09-20 14:12:36.994 [cluster-ClusterId{value='5ba1102c5f150300015d5089', description='null'}-192.168.32.75:27117] o.m.d.connection INFO  - Opened connection [connectionId{localValue:14, serverValue:27}] to 192.168.32.75:27117
+2018-09-20 14:12:36.995 [cluster-ClusterId{value='5ba1102c5f150300015d5089', description='null'}-192.168.32.75:27117] o.m.d.cluster INFO  - Monitor thread successfully connected to server with description ServerDescription{address=192.168.32.75:27117, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 6, 4]}, minWireVersion=0, maxWireVersion=6, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=777448, setName='rs', canonicalAddress=192.168.32.75:27117, hosts=[192.168.32.75:27117], passives=[], arbiters=[], primary='192.168.32.75:27117', tagSet=TagSet{[]}, electionId=7fffffff0000000000000003, setVersion=1, lastWriteDate=Thu Sep 20 14:12:36 UTC 2018, lastUpdateTimeNanos=783407751337623}
+2018-09-20 14:12:36.995 [cluster-ClusterId{value='5ba1102c5f150300015d5089', description='null'}-192.168.32.75:27117] o.m.d.cluster INFO  - Setting max election id to 7fffffff0000000000000003 from replica set primary 192.168.32.75:27117
+2018-09-20 14:12:36.995 [cluster-ClusterId{value='5ba1102c5f150300015d5089', description='null'}-192.168.32.75:27117] o.m.d.cluster INFO  - Discovered replica set primary 192.168.32.75:27117
+2018-09-20 14:12:42.756 [quartzScheduler_Worker-8] o.m.d.connection INFO  - Closed connection [connectionId{localValue:10, serverValue:44}] to 192.168.32.75:27117 because there was a socket exception raised on another connection from this pool.
+2018-09-20 14:12:42.757 [quartzScheduler_Worker-8] o.m.d.connection INFO  - Closed connection [connectionId{localValue:8, serverValue:28}] to 192.168.32.75:27117 because there was a socket exception raised on another connection from this pool.
+2018-09-20 14:12:42.779 [quartzScheduler_Worker-8] o.m.d.connection INFO  - Opened connection [connectionId{localValue:15, serverValue:28}] to 192.168.32.75:27117
+2018-09-20 14:13:12.784 [quartzScheduler_Worker-7] o.m.d.connection INFO  - Closed connection [connectionId{localValue:9, serverValue:29}] to 192.168.32.75:27117 because there was a socket exception raised on another connection from this pool.
+2018-09-20 14:13:12.810 [quartzScheduler_Worker-7] o.m.d.connection INFO  - Opened connection [connectionId{localValue:16, serverValue:29}] to 192.168.32.75:27117
+2018-09-20 14:48:12.817 [quartzScheduler_Worker-1] o.m.d.connection INFO  - Opened connection [connectionId{localValue:17, serverValue:42}] to 192.168.32.75:27117

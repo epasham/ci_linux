@@ -1,0 +1,254 @@
+2018-09-28 13:37:56.558 [quartzScheduler_Worker-9] CommonUtil WARN  - XFAgentServer ID worker is now added into Blacklist with this reason: Flowengine detected that XFAgent process of serverName worker did not update for too long (325 > 300 seconds), and will treat it as dead now..
+2018-09-28 13:48:26.614 [quartzScheduler_Worker-2] NetlibClient ERROR - failed to conntect to fsc
+io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: /192.168.32.52:9095
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source) ~[?:?]
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:325) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:340) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:633) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:545) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:499) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:459) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:884) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at java.lang.Thread.run(Unknown Source) ~[?:?]
+Caused by: java.net.ConnectException: Connection refused
+	... 11 more
+2018-09-28 13:48:26.697 [quartzScheduler_Worker-2] StaleDTGChecker ERROR - Failed to query running DTGs from FSC 192.168.32.52
+java.lang.NullPointerException: null
+	at com.netbrain.xf.flowengine.fscclient.DTGQueryResponse.parseResponse(DTGQueryResponse.java:53) ~[classes!/:0.8-SNAPSHOT]
+	at com.netbrain.xf.flowengine.background.StaleDTGChecker.checkAllRunningDTGs(StaleDTGChecker.java:119) [classes!/:0.8-SNAPSHOT]
+	at com.netbrain.xf.flowengine.background.StaleDTGChecker.executeInternal(StaleDTGChecker.java:152) [classes!/:0.8-SNAPSHOT]
+	at org.springframework.scheduling.quartz.QuartzJobBean.execute(QuartzJobBean.java:75) [spring-context-support-5.0.6.RELEASE.jar!/:5.0.6.RELEASE]
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202) [quartz-2.3.0.jar!/:?]
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573) [quartz-2.3.0.jar!/:?]
+2018-09-28 14:48:26.591 [quartzScheduler_Worker-6] NetlibClient ERROR - failed to conntect to fsc
+io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: /192.168.32.52:9095
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source) ~[?:?]
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:325) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:340) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:633) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:545) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:499) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:459) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:884) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at java.lang.Thread.run(Unknown Source) ~[?:?]
+Caused by: java.net.ConnectException: Connection refused
+	... 11 more
+2018-09-28 14:48:26.615 [quartzScheduler_Worker-6] StaleDTGChecker ERROR - Failed to query running DTGs from FSC 192.168.32.52
+java.lang.NullPointerException: null
+	at com.netbrain.xf.flowengine.fscclient.DTGQueryResponse.parseResponse(DTGQueryResponse.java:53) ~[classes!/:0.8-SNAPSHOT]
+	at com.netbrain.xf.flowengine.background.StaleDTGChecker.checkAllRunningDTGs(StaleDTGChecker.java:119) [classes!/:0.8-SNAPSHOT]
+	at com.netbrain.xf.flowengine.background.StaleDTGChecker.executeInternal(StaleDTGChecker.java:152) [classes!/:0.8-SNAPSHOT]
+	at org.springframework.scheduling.quartz.QuartzJobBean.execute(QuartzJobBean.java:75) [spring-context-support-5.0.6.RELEASE.jar!/:5.0.6.RELEASE]
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202) [quartz-2.3.0.jar!/:?]
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573) [quartz-2.3.0.jar!/:?]
+2018-09-28 15:48:26.615 [quartzScheduler_Worker-8] NetlibClient ERROR - failed to conntect to fsc
+io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: /192.168.32.52:9095
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source) ~[?:?]
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:325) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:340) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:633) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:545) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:499) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:459) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:884) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at java.lang.Thread.run(Unknown Source) ~[?:?]
+Caused by: java.net.ConnectException: Connection refused
+	... 11 more
+2018-09-28 15:48:26.616 [quartzScheduler_Worker-8] StaleDTGChecker ERROR - Failed to query running DTGs from FSC 192.168.32.52
+java.lang.NullPointerException: null
+	at com.netbrain.xf.flowengine.fscclient.DTGQueryResponse.parseResponse(DTGQueryResponse.java:53) ~[classes!/:0.8-SNAPSHOT]
+	at com.netbrain.xf.flowengine.background.StaleDTGChecker.checkAllRunningDTGs(StaleDTGChecker.java:119) [classes!/:0.8-SNAPSHOT]
+	at com.netbrain.xf.flowengine.background.StaleDTGChecker.executeInternal(StaleDTGChecker.java:152) [classes!/:0.8-SNAPSHOT]
+	at org.springframework.scheduling.quartz.QuartzJobBean.execute(QuartzJobBean.java:75) [spring-context-support-5.0.6.RELEASE.jar!/:5.0.6.RELEASE]
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202) [quartz-2.3.0.jar!/:?]
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573) [quartz-2.3.0.jar!/:?]
+2018-09-28 16:48:26.621 [quartzScheduler_Worker-10] NetlibClient ERROR - failed to conntect to fsc
+io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: /192.168.32.52:9095
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source) ~[?:?]
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:325) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:340) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:633) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:545) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:499) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:459) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:884) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at java.lang.Thread.run(Unknown Source) ~[?:?]
+Caused by: java.net.ConnectException: Connection refused
+	... 11 more
+2018-09-28 16:48:26.631 [quartzScheduler_Worker-10] StaleDTGChecker ERROR - Failed to query running DTGs from FSC 192.168.32.52
+java.lang.NullPointerException: null
+	at com.netbrain.xf.flowengine.fscclient.DTGQueryResponse.parseResponse(DTGQueryResponse.java:53) ~[classes!/:0.8-SNAPSHOT]
+	at com.netbrain.xf.flowengine.background.StaleDTGChecker.checkAllRunningDTGs(StaleDTGChecker.java:119) [classes!/:0.8-SNAPSHOT]
+	at com.netbrain.xf.flowengine.background.StaleDTGChecker.executeInternal(StaleDTGChecker.java:152) [classes!/:0.8-SNAPSHOT]
+	at org.springframework.scheduling.quartz.QuartzJobBean.execute(QuartzJobBean.java:75) [spring-context-support-5.0.6.RELEASE.jar!/:5.0.6.RELEASE]
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202) [quartz-2.3.0.jar!/:?]
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573) [quartz-2.3.0.jar!/:?]
+2018-09-28 17:48:26.593 [quartzScheduler_Worker-5] NetlibClient ERROR - failed to conntect to fsc
+io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: /192.168.32.52:9095
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source) ~[?:?]
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:325) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:340) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:633) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:545) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:499) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:459) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:884) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at java.lang.Thread.run(Unknown Source) ~[?:?]
+Caused by: java.net.ConnectException: Connection refused
+	... 11 more
+2018-09-28 17:48:26.597 [quartzScheduler_Worker-5] StaleDTGChecker ERROR - Failed to query running DTGs from FSC 192.168.32.52
+java.lang.NullPointerException: null
+	at com.netbrain.xf.flowengine.fscclient.DTGQueryResponse.parseResponse(DTGQueryResponse.java:53) ~[classes!/:0.8-SNAPSHOT]
+	at com.netbrain.xf.flowengine.background.StaleDTGChecker.checkAllRunningDTGs(StaleDTGChecker.java:119) [classes!/:0.8-SNAPSHOT]
+	at com.netbrain.xf.flowengine.background.StaleDTGChecker.executeInternal(StaleDTGChecker.java:152) [classes!/:0.8-SNAPSHOT]
+	at org.springframework.scheduling.quartz.QuartzJobBean.execute(QuartzJobBean.java:75) [spring-context-support-5.0.6.RELEASE.jar!/:5.0.6.RELEASE]
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202) [quartz-2.3.0.jar!/:?]
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573) [quartz-2.3.0.jar!/:?]
+2018-09-28 18:48:26.603 [quartzScheduler_Worker-5] NetlibClient ERROR - failed to conntect to fsc
+io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: /192.168.32.52:9095
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source) ~[?:?]
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:325) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:340) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:633) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:545) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:499) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:459) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:884) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at java.lang.Thread.run(Unknown Source) ~[?:?]
+Caused by: java.net.ConnectException: Connection refused
+	... 11 more
+2018-09-28 18:48:26.618 [quartzScheduler_Worker-5] StaleDTGChecker ERROR - Failed to query running DTGs from FSC 192.168.32.52
+java.lang.NullPointerException: null
+	at com.netbrain.xf.flowengine.fscclient.DTGQueryResponse.parseResponse(DTGQueryResponse.java:53) ~[classes!/:0.8-SNAPSHOT]
+	at com.netbrain.xf.flowengine.background.StaleDTGChecker.checkAllRunningDTGs(StaleDTGChecker.java:119) [classes!/:0.8-SNAPSHOT]
+	at com.netbrain.xf.flowengine.background.StaleDTGChecker.executeInternal(StaleDTGChecker.java:152) [classes!/:0.8-SNAPSHOT]
+	at org.springframework.scheduling.quartz.QuartzJobBean.execute(QuartzJobBean.java:75) [spring-context-support-5.0.6.RELEASE.jar!/:5.0.6.RELEASE]
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202) [quartz-2.3.0.jar!/:?]
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573) [quartz-2.3.0.jar!/:?]
+2018-09-28 19:48:26.606 [quartzScheduler_Worker-7] NetlibClient ERROR - failed to conntect to fsc
+io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: /192.168.32.52:9095
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source) ~[?:?]
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:325) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:340) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:633) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:545) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:499) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:459) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:884) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at java.lang.Thread.run(Unknown Source) ~[?:?]
+Caused by: java.net.ConnectException: Connection refused
+	... 11 more
+2018-09-28 19:48:26.611 [quartzScheduler_Worker-7] StaleDTGChecker ERROR - Failed to query running DTGs from FSC 192.168.32.52
+java.lang.NullPointerException: null
+	at com.netbrain.xf.flowengine.fscclient.DTGQueryResponse.parseResponse(DTGQueryResponse.java:53) ~[classes!/:0.8-SNAPSHOT]
+	at com.netbrain.xf.flowengine.background.StaleDTGChecker.checkAllRunningDTGs(StaleDTGChecker.java:119) [classes!/:0.8-SNAPSHOT]
+	at com.netbrain.xf.flowengine.background.StaleDTGChecker.executeInternal(StaleDTGChecker.java:152) [classes!/:0.8-SNAPSHOT]
+	at org.springframework.scheduling.quartz.QuartzJobBean.execute(QuartzJobBean.java:75) [spring-context-support-5.0.6.RELEASE.jar!/:5.0.6.RELEASE]
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202) [quartz-2.3.0.jar!/:?]
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573) [quartz-2.3.0.jar!/:?]
+2018-09-28 20:48:26.611 [quartzScheduler_Worker-6] NetlibClient ERROR - failed to conntect to fsc
+io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: /192.168.32.52:9095
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source) ~[?:?]
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:325) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:340) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:633) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:545) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:499) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:459) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:884) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at java.lang.Thread.run(Unknown Source) ~[?:?]
+Caused by: java.net.ConnectException: Connection refused
+	... 11 more
+2018-09-28 20:48:26.614 [quartzScheduler_Worker-6] StaleDTGChecker ERROR - Failed to query running DTGs from FSC 192.168.32.52
+java.lang.NullPointerException: null
+	at com.netbrain.xf.flowengine.fscclient.DTGQueryResponse.parseResponse(DTGQueryResponse.java:53) ~[classes!/:0.8-SNAPSHOT]
+	at com.netbrain.xf.flowengine.background.StaleDTGChecker.checkAllRunningDTGs(StaleDTGChecker.java:119) [classes!/:0.8-SNAPSHOT]
+	at com.netbrain.xf.flowengine.background.StaleDTGChecker.executeInternal(StaleDTGChecker.java:152) [classes!/:0.8-SNAPSHOT]
+	at org.springframework.scheduling.quartz.QuartzJobBean.execute(QuartzJobBean.java:75) [spring-context-support-5.0.6.RELEASE.jar!/:5.0.6.RELEASE]
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202) [quartz-2.3.0.jar!/:?]
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573) [quartz-2.3.0.jar!/:?]
+2018-09-28 21:48:26.591 [quartzScheduler_Worker-1] NetlibClient ERROR - failed to conntect to fsc
+io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: /192.168.32.52:9095
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source) ~[?:?]
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:325) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:340) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:633) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:545) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:499) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:459) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:884) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at java.lang.Thread.run(Unknown Source) ~[?:?]
+Caused by: java.net.ConnectException: Connection refused
+	... 11 more
+2018-09-28 21:48:26.604 [quartzScheduler_Worker-1] StaleDTGChecker ERROR - Failed to query running DTGs from FSC 192.168.32.52
+java.lang.NullPointerException: null
+	at com.netbrain.xf.flowengine.fscclient.DTGQueryResponse.parseResponse(DTGQueryResponse.java:53) ~[classes!/:0.8-SNAPSHOT]
+	at com.netbrain.xf.flowengine.background.StaleDTGChecker.checkAllRunningDTGs(StaleDTGChecker.java:119) [classes!/:0.8-SNAPSHOT]
+	at com.netbrain.xf.flowengine.background.StaleDTGChecker.executeInternal(StaleDTGChecker.java:152) [classes!/:0.8-SNAPSHOT]
+	at org.springframework.scheduling.quartz.QuartzJobBean.execute(QuartzJobBean.java:75) [spring-context-support-5.0.6.RELEASE.jar!/:5.0.6.RELEASE]
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202) [quartz-2.3.0.jar!/:?]
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573) [quartz-2.3.0.jar!/:?]
+2018-09-28 22:48:26.602 [quartzScheduler_Worker-7] NetlibClient ERROR - failed to conntect to fsc
+io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: /192.168.32.52:9095
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source) ~[?:?]
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:325) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:340) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:633) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:545) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:499) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:459) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:884) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at java.lang.Thread.run(Unknown Source) ~[?:?]
+Caused by: java.net.ConnectException: Connection refused
+	... 11 more
+2018-09-28 22:48:26.606 [quartzScheduler_Worker-7] StaleDTGChecker ERROR - Failed to query running DTGs from FSC 192.168.32.52
+java.lang.NullPointerException: null
+	at com.netbrain.xf.flowengine.fscclient.DTGQueryResponse.parseResponse(DTGQueryResponse.java:53) ~[classes!/:0.8-SNAPSHOT]
+	at com.netbrain.xf.flowengine.background.StaleDTGChecker.checkAllRunningDTGs(StaleDTGChecker.java:119) [classes!/:0.8-SNAPSHOT]
+	at com.netbrain.xf.flowengine.background.StaleDTGChecker.executeInternal(StaleDTGChecker.java:152) [classes!/:0.8-SNAPSHOT]
+	at org.springframework.scheduling.quartz.QuartzJobBean.execute(QuartzJobBean.java:75) [spring-context-support-5.0.6.RELEASE.jar!/:5.0.6.RELEASE]
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202) [quartz-2.3.0.jar!/:?]
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573) [quartz-2.3.0.jar!/:?]
+2018-09-28 23:48:26.607 [quartzScheduler_Worker-4] NetlibClient ERROR - failed to conntect to fsc
+io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: /192.168.32.52:9095
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source) ~[?:?]
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:325) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:340) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:633) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:545) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:499) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:459) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:884) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-all-4.1.24.Final.jar!/:4.1.24.Final]
+	at java.lang.Thread.run(Unknown Source) ~[?:?]
+Caused by: java.net.ConnectException: Connection refused
+	... 11 more
+2018-09-28 23:48:26.615 [quartzScheduler_Worker-4] StaleDTGChecker ERROR - Failed to query running DTGs from FSC 192.168.32.52
+java.lang.NullPointerException: null
+	at com.netbrain.xf.flowengine.fscclient.DTGQueryResponse.parseResponse(DTGQueryResponse.java:53) ~[classes!/:0.8-SNAPSHOT]
+	at com.netbrain.xf.flowengine.background.StaleDTGChecker.checkAllRunningDTGs(StaleDTGChecker.java:119) [classes!/:0.8-SNAPSHOT]
+	at com.netbrain.xf.flowengine.background.StaleDTGChecker.executeInternal(StaleDTGChecker.java:152) [classes!/:0.8-SNAPSHOT]
+	at org.springframework.scheduling.quartz.QuartzJobBean.execute(QuartzJobBean.java:75) [spring-context-support-5.0.6.RELEASE.jar!/:5.0.6.RELEASE]
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202) [quartz-2.3.0.jar!/:?]
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573) [quartz-2.3.0.jar!/:?]

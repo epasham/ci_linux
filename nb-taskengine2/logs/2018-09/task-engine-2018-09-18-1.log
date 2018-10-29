@@ -1,0 +1,78 @@
+2018-09-18 14:34:20.284 [main] o.s.c.a.AnnotationConfigApplicationContext INFO  - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@196a42c3: startup date [Tue Sep 18 14:34:20 UTC 2018]; root of context hierarchy
+2018-09-18 14:34:22.696 [pool-2-thread-3] HASupport WARN  - RUNNING AS LEADER
+2018-09-18 14:34:23.047 [main] o.m.d.cluster INFO  - Cluster created with settings {hosts=[192.168.32.75:27117], mode=MULTIPLE, requiredClusterType=REPLICA_SET, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500, requiredReplicaSetName='rs'}
+2018-09-18 14:34:23.051 [main] o.m.d.cluster INFO  - Adding discovered server 192.168.32.75:27117 to client view of cluster
+2018-09-18 14:34:23.471 [cluster-ClusterId{value='5ba10cef5f1503000108acc2', description='null'}-192.168.32.75:27117] o.m.d.connection INFO  - Opened connection [connectionId{localValue:1, serverValue:7}] to 192.168.32.75:27117
+2018-09-18 14:34:23.485 [cluster-ClusterId{value='5ba10cef5f1503000108acc2', description='null'}-192.168.32.75:27117] o.m.d.cluster INFO  - Monitor thread successfully connected to server with description ServerDescription{address=192.168.32.75:27117, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 6, 4]}, minWireVersion=0, maxWireVersion=6, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=12845002, setName='rs', canonicalAddress=192.168.32.75:27117, hosts=[192.168.32.75:27117], passives=[], arbiters=[], primary='192.168.32.75:27117', tagSet=TagSet{[]}, electionId=7fffffff0000000000000001, setVersion=1, lastWriteDate=Tue Sep 18 14:34:19 UTC 2018, lastUpdateTimeNanos=611914241087588}
+2018-09-18 14:34:23.494 [cluster-ClusterId{value='5ba10cef5f1503000108acc2', description='null'}-192.168.32.75:27117] o.m.d.cluster INFO  - Setting max election id to 7fffffff0000000000000001 from replica set primary 192.168.32.75:27117
+2018-09-18 14:34:23.494 [cluster-ClusterId{value='5ba10cef5f1503000108acc2', description='null'}-192.168.32.75:27117] o.m.d.cluster INFO  - Setting max set version to 1 from replica set primary 192.168.32.75:27117
+2018-09-18 14:34:23.494 [cluster-ClusterId{value='5ba10cef5f1503000108acc2', description='null'}-192.168.32.75:27117] o.m.d.cluster INFO  - Discovered replica set primary 192.168.32.75:27117
+2018-09-18 14:34:23.760 [main] o.m.d.connection INFO  - Opened connection [connectionId{localValue:2, serverValue:8}] to 192.168.32.75:27117
+2018-09-18 14:34:24.207 [main] o.m.d.cluster INFO  - Cluster created with settings {hosts=[192.168.32.75:27117], mode=MULTIPLE, requiredClusterType=REPLICA_SET, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500, requiredReplicaSetName='rs'}
+2018-09-18 14:34:24.207 [main] o.m.d.cluster INFO  - Adding discovered server 192.168.32.75:27117 to client view of cluster
+2018-09-18 14:34:24.390 [cluster-ClusterId{value='5ba10cf05f1503000108acc3', description='null'}-192.168.32.75:27117] o.m.d.connection INFO  - Opened connection [connectionId{localValue:3, serverValue:9}] to 192.168.32.75:27117
+2018-09-18 14:34:24.395 [cluster-ClusterId{value='5ba10cf05f1503000108acc3', description='null'}-192.168.32.75:27117] o.m.d.cluster INFO  - Monitor thread successfully connected to server with description ServerDescription{address=192.168.32.75:27117, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 6, 4]}, minWireVersion=0, maxWireVersion=6, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=4910618, setName='rs', canonicalAddress=192.168.32.75:27117, hosts=[192.168.32.75:27117], passives=[], arbiters=[], primary='192.168.32.75:27117', tagSet=TagSet{[]}, electionId=7fffffff0000000000000001, setVersion=1, lastWriteDate=Tue Sep 18 14:34:24 UTC 2018, lastUpdateTimeNanos=611915151763135}
+2018-09-18 14:34:24.396 [cluster-ClusterId{value='5ba10cf05f1503000108acc3', description='null'}-192.168.32.75:27117] o.m.d.cluster INFO  - Setting max election id to 7fffffff0000000000000001 from replica set primary 192.168.32.75:27117
+2018-09-18 14:34:24.397 [cluster-ClusterId{value='5ba10cf05f1503000108acc3', description='null'}-192.168.32.75:27117] o.m.d.cluster INFO  - Setting max set version to 1 from replica set primary 192.168.32.75:27117
+2018-09-18 14:34:24.397 [cluster-ClusterId{value='5ba10cf05f1503000108acc3', description='null'}-192.168.32.75:27117] o.m.d.cluster INFO  - Discovered replica set primary 192.168.32.75:27117
+2018-09-18 14:34:24.689 [main] TaskQueueManagerImpl INFO  - Adding new XFAgent record for serverName worker
+2018-09-18 14:34:25.168 [main] o.q.i.StdSchedulerFactory INFO  - Using default implementation for ThreadExecutor
+2018-09-18 14:34:25.207 [main] o.q.c.SchedulerSignalerImpl INFO  - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2018-09-18 14:34:25.207 [main] o.q.c.QuartzScheduler INFO  - Quartz Scheduler v.2.3.0 created.
+2018-09-18 14:34:25.208 [main] o.q.s.RAMJobStore INFO  - RAMJobStore initialized.
+2018-09-18 14:34:25.208 [main] o.q.c.QuartzScheduler INFO  - Scheduler meta-data: Quartz Scheduler (v2.3.0) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2018-09-18 14:34:25.208 [main] o.q.i.StdSchedulerFactory INFO  - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2018-09-18 14:34:25.209 [main] o.q.i.StdSchedulerFactory INFO  - Quartz scheduler version: 2.3.0
+2018-09-18 14:34:25.214 [main] o.q.c.QuartzScheduler INFO  - JobFactory set to: org.springframework.boot.autoconfigure.quartz.AutowireCapableBeanJobFactory@48ea2003
+2018-09-18 14:34:25.704 [main] o.s.j.e.a.AnnotationMBeanExporter INFO  - Registering beans for JMX exposure on startup
+2018-09-18 14:34:25.715 [main] o.s.c.s.DefaultLifecycleProcessor INFO  - Starting beans in phase 2147483647
+2018-09-18 14:34:25.715 [main] o.s.s.q.SchedulerFactoryBean INFO  - Starting Quartz Scheduler now
+2018-09-18 14:34:25.715 [main] o.q.c.QuartzScheduler INFO  - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2018-09-18 14:34:25.912 [quartzScheduler_Worker-7] o.m.d.connection INFO  - Opened connection [connectionId{localValue:4, serverValue:10}] to 192.168.32.75:27117
+2018-09-18 14:47:33.276 [Thread-2] o.s.c.a.AnnotationConfigApplicationContext INFO  - Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@196a42c3: startup date [Tue Sep 18 14:34:20 UTC 2018]; root of context hierarchy
+2018-09-18 14:48:08.817 [main] o.s.c.a.AnnotationConfigApplicationContext INFO  - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@202b0582: startup date [Tue Sep 18 14:48:08 UTC 2018]; root of context hierarchy
+2018-09-18 14:48:11.044 [pool-2-thread-3] HASupport WARN  - RUNNING AS LEADER
+2018-09-18 14:48:11.386 [main] o.m.d.cluster INFO  - Cluster created with settings {hosts=[192.168.32.75:27117], mode=MULTIPLE, requiredClusterType=REPLICA_SET, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500, requiredReplicaSetName='rs'}
+2018-09-18 14:48:11.387 [main] o.m.d.cluster INFO  - Adding discovered server 192.168.32.75:27117 to client view of cluster
+2018-09-18 14:48:11.722 [cluster-ClusterId{value='5ba1102b5f150300015d5088', description='null'}-192.168.32.75:27117] o.m.d.connection INFO  - Opened connection [connectionId{localValue:1, serverValue:17}] to 192.168.32.75:27117
+2018-09-18 14:48:11.733 [cluster-ClusterId{value='5ba1102b5f150300015d5088', description='null'}-192.168.32.75:27117] o.m.d.cluster INFO  - Monitor thread successfully connected to server with description ServerDescription{address=192.168.32.75:27117, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 6, 4]}, minWireVersion=0, maxWireVersion=6, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=9510384, setName='rs', canonicalAddress=192.168.32.75:27117, hosts=[192.168.32.75:27117], passives=[], arbiters=[], primary='192.168.32.75:27117', tagSet=TagSet{[]}, electionId=7fffffff0000000000000001, setVersion=1, lastWriteDate=Tue Sep 18 14:48:09 UTC 2018, lastUpdateTimeNanos=612742489435741}
+2018-09-18 14:48:11.734 [cluster-ClusterId{value='5ba1102b5f150300015d5088', description='null'}-192.168.32.75:27117] o.m.d.cluster INFO  - Setting max election id to 7fffffff0000000000000001 from replica set primary 192.168.32.75:27117
+2018-09-18 14:48:11.734 [cluster-ClusterId{value='5ba1102b5f150300015d5088', description='null'}-192.168.32.75:27117] o.m.d.cluster INFO  - Setting max set version to 1 from replica set primary 192.168.32.75:27117
+2018-09-18 14:48:11.734 [cluster-ClusterId{value='5ba1102b5f150300015d5088', description='null'}-192.168.32.75:27117] o.m.d.cluster INFO  - Discovered replica set primary 192.168.32.75:27117
+2018-09-18 14:48:12.014 [main] o.m.d.connection INFO  - Opened connection [connectionId{localValue:2, serverValue:18}] to 192.168.32.75:27117
+2018-09-18 14:48:12.247 [main] o.m.d.cluster INFO  - Cluster created with settings {hosts=[192.168.32.75:27117], mode=MULTIPLE, requiredClusterType=REPLICA_SET, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500, requiredReplicaSetName='rs'}
+2018-09-18 14:48:12.247 [main] o.m.d.cluster INFO  - Adding discovered server 192.168.32.75:27117 to client view of cluster
+2018-09-18 14:48:12.341 [cluster-ClusterId{value='5ba1102c5f150300015d5089', description='null'}-192.168.32.75:27117] o.m.d.connection INFO  - Opened connection [connectionId{localValue:3, serverValue:19}] to 192.168.32.75:27117
+2018-09-18 14:48:12.355 [cluster-ClusterId{value='5ba1102c5f150300015d5089', description='null'}-192.168.32.75:27117] o.m.d.cluster INFO  - Monitor thread successfully connected to server with description ServerDescription{address=192.168.32.75:27117, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 6, 4]}, minWireVersion=0, maxWireVersion=6, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=13012473, setName='rs', canonicalAddress=192.168.32.75:27117, hosts=[192.168.32.75:27117], passives=[], arbiters=[], primary='192.168.32.75:27117', tagSet=TagSet{[]}, electionId=7fffffff0000000000000001, setVersion=1, lastWriteDate=Tue Sep 18 14:48:09 UTC 2018, lastUpdateTimeNanos=612743111452154}
+2018-09-18 14:48:12.358 [cluster-ClusterId{value='5ba1102c5f150300015d5089', description='null'}-192.168.32.75:27117] o.m.d.cluster INFO  - Setting max election id to 7fffffff0000000000000001 from replica set primary 192.168.32.75:27117
+2018-09-18 14:48:12.358 [cluster-ClusterId{value='5ba1102c5f150300015d5089', description='null'}-192.168.32.75:27117] o.m.d.cluster INFO  - Setting max set version to 1 from replica set primary 192.168.32.75:27117
+2018-09-18 14:48:12.358 [cluster-ClusterId{value='5ba1102c5f150300015d5089', description='null'}-192.168.32.75:27117] o.m.d.cluster INFO  - Discovered replica set primary 192.168.32.75:27117
+2018-09-18 14:48:12.509 [main] TaskQueueManagerImpl INFO  - Adding new XFAgent record for serverName worker2
+2018-09-18 14:48:12.872 [main] o.q.i.StdSchedulerFactory INFO  - Using default implementation for ThreadExecutor
+2018-09-18 14:48:12.890 [main] o.q.c.SchedulerSignalerImpl INFO  - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2018-09-18 14:48:12.890 [main] o.q.c.QuartzScheduler INFO  - Quartz Scheduler v.2.3.0 created.
+2018-09-18 14:48:12.890 [main] o.q.s.RAMJobStore INFO  - RAMJobStore initialized.
+2018-09-18 14:48:12.891 [main] o.q.c.QuartzScheduler INFO  - Scheduler meta-data: Quartz Scheduler (v2.3.0) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2018-09-18 14:48:12.891 [main] o.q.i.StdSchedulerFactory INFO  - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2018-09-18 14:48:12.891 [main] o.q.i.StdSchedulerFactory INFO  - Quartz scheduler version: 2.3.0
+2018-09-18 14:48:12.894 [main] o.q.c.QuartzScheduler INFO  - JobFactory set to: org.springframework.boot.autoconfigure.quartz.AutowireCapableBeanJobFactory@f973499
+2018-09-18 14:48:13.458 [main] o.s.j.e.a.AnnotationMBeanExporter INFO  - Registering beans for JMX exposure on startup
+2018-09-18 14:48:13.463 [main] o.s.c.s.DefaultLifecycleProcessor INFO  - Starting beans in phase 2147483647
+2018-09-18 14:48:13.464 [main] o.s.s.q.SchedulerFactoryBean INFO  - Starting Quartz Scheduler now
+2018-09-18 14:48:13.464 [main] o.q.c.QuartzScheduler INFO  - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2018-09-18 14:48:13.636 [quartzScheduler_Worker-7] o.m.d.connection INFO  - Opened connection [connectionId{localValue:4, serverValue:20}] to 192.168.32.75:27117
+2018-09-18 15:48:12.849 [quartzScheduler_Worker-3] o.m.d.connection INFO  - Opened connection [connectionId{localValue:5, serverValue:1143}] to 192.168.32.75:27117
