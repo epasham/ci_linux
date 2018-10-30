@@ -11,18 +11,17 @@ mkdir output/nb-elasticsearch
 #build images
 echo "---------------build ./nb-redis---------------"
 cd ./nb-redis
-docker image build -t nb-redis -f Dockerfile .
+docker image build -t cg2-linux-asg/redis -f Dockerfile .
+docker tag cg2-linux-asg/redis:latest 041444721655.dkr.ecr.us-east-1.amazonaws.com/cg2-linux-asg/redis:latest
 
-docker image save nb-redis --output ../output/nb-redis/nb-redis.tar
 
 cp readme ../output/nb-redis/
 cp -r conf ../output/nb-redis/
 
 echo "---------------build ./nb-taskengine---------------"
 cd ../nb-taskengine
-docker image build -t nb-taskengine -f Dockerfile .
-
-docker image save nb-taskengine --output ../output/nb-taskengine/nb-taskengine.tar
+docker image build -t cg2-linux-asg/task-engine -f Dockerfile .
+docker tag cg2-linux-asg/task-engine:latest 041444721655.dkr.ecr.us-east-1.amazonaws.com/cg2-linux-asg/task-engine:latest
 
 cp readme ../output/nb-taskengine/
 cp -r conf ../output/nb-taskengine/
