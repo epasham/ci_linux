@@ -12,10 +12,8 @@ mkdir output/nb-elasticsearch
 echo "---------------build ./nb-redis---------------"
 cd ./nb-redis
 docker image build -t nb-redis -f Dockerfile .
-rc=$?; if [[ $rc != 0 ]]; then echo "Error $rc"; exit $rc; fi
 
 docker image save nb-redis --output ../output/nb-redis/nb-redis.tar
-rc=$?; if [[ $rc != 0 ]]; then echo "Error $rc"; exit $rc; fi
 
 cp readme ../output/nb-redis/
 cp -r conf ../output/nb-redis/
@@ -23,15 +21,11 @@ cp -r conf ../output/nb-redis/
 echo "---------------build ./nb-taskengine---------------"
 cd ../nb-taskengine
 docker image build -t nb-taskengine -f Dockerfile .
-rc=$?; if [[ $rc != 0 ]]; then echo "Error $rc"; exit $rc; fi
 
 docker image save nb-taskengine --output ../output/nb-taskengine/nb-taskengine.tar
-rc=$?; if [[ $rc != 0 ]]; then echo "Error $rc"; exit $rc; fi
 
 cp readme ../output/nb-taskengine/
 cp -r conf ../output/nb-taskengine/
-
-
 
 
 cd ..

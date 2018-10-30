@@ -1,5 +1,5 @@
 #Stage 1: build from source code
-FROM centos:centos7.2.1511 as redis-builder
+FROM centos:centos7.2.1511 
 
 # add our user and group first to make sure their IDs get assigned consistently, regardless of whatever dependencies get added
 # RUN groupadd -r redis && useradd -r -g redis reids
@@ -25,13 +25,6 @@ RUN \
   sed -i 's/^\(dir .*\)$/# \1\ndir \/data/' /etc/redis/redis.conf && \
   sed -i 's/^\(protected-mode .*\)$/protected-mode no/' /etc/redis/redis.conf && \
   sed -i 's/^\(logfile .*\)$/# \1/' /etc/redis/redis.conf
-
-
-#Stage 2: Release image. Copy the executables to the image.
-FROM centos:centos7.2.1511
-
-COPY --from=redis-builder /usr/local/bin/redis-* /usr/local/bin/
-COPY --from=redis-builder /etc/redis /etc/redis
 
 # Define mountable directories
 VOLUME ["/data"]
