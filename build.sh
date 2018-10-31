@@ -1,16 +1,16 @@
 
 #remove outputs
-rm -r ci_linux/output
-mkdir ci_linux/output
-mkdir ci_linux/output/nb-redis
-mkdir ci_linux/output/nb-taskengine
-mkdir ci_linux/output/nb-rabbitmq
-mkdir ci_linux/output/nb-mongodb
-mkdir ci_linux/output/nb-elasticsearch
+rm -r output
+mkdir output
+mkdir output/nb-redis
+mkdir output/nb-taskengine
+mkdir output/nb-rabbitmq
+mkdir output/nb-mongodb
+mkdir output/nb-elasticsearch
 
 #build images
 echo "---------------build ./nb-redis---------------"
-cd ci_linux/nb-redis
+cd nb-redis
 docker image build -t cg2-linux-asg/redis -f Dockerfile .
 docker tag cg2-linux-asg/redis:latest 041444721655.dkr.ecr.us-east-1.amazonaws.com/cg2-linux-asg/redis:latest
 
