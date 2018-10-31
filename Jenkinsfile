@@ -1,5 +1,5 @@
 node {
-  sh 'rm -rf ./'
+  sh 'rm -rf /var/lib/jenkins/workspace/CI/* || true'
   sh 'git clone https://github.com/LIUBOPENG/ci_linux.git/ || true'
   sh 'rm ~/.docker/config.json || true'
   sh './build.sh || true'
