@@ -1,21 +1,14 @@
-
 pipeline {
     agent any
-
     stages {
-        stage('Build') {
+        stage('Image Baking') {
             steps {
-                echo 'Building..'
+		sh "./build.sh"
             }
         }
-        stage('Test') {
+        stage('Registry Publishment') {
             steps {
                 echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
             }
         }
     }
