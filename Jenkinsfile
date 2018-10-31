@@ -1,4 +1,5 @@
-node {
+pipeline {
+    agent any
     stages {
         stage('Image Baking') {
             steps {
