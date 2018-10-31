@@ -1,7 +1,7 @@
 
 node {
   stage 'Docker build'
-  sh "./build.sh"
+  sh './build.sh'
   #docker.build('cg2-linux-asg/redis')
  
   stage 'Docker push'
