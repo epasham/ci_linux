@@ -34,7 +34,7 @@ docker tag cg2-linux-asg/elasticsearch:latest 041444721655.dkr.ecr.us-east-1.ama
 
 echo "---------------build ./rabbitmq---------------"
 docker pull rabbitmq:3-management
-docker tag rabbitmq:3-management 041444721655.dkr.ecr.us-east-1.amazonaws.com/cg2-linux-asg/rabbitmq
+docker tag rabbitmq:3-management 041444721655.dkr.ecr.us-east-1.amazonaws.com/cg2-linux-asg/rabbitmq:latest
 
 cd ..
 echo "---------------build completed. ---------------"
