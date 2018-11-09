@@ -12,5 +12,6 @@ node {
     docker.image('cg2-linux-asg/task-engine').push('latest')
     docker.image('cg2-linux-asg/mongo-db').push('latest')
     docker.image('cg2-linux-asg/rabbitmq').push('latest')
+    docker.image('cg2-linux-asg/elasticsearch').push('latest')
   }
 }
