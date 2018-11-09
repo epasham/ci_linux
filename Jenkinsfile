@@ -11,5 +11,6 @@ node {
     docker.image('cg2-linux-asg/redis').push('latest')
     docker.image('cg2-linux-asg/task-engine').push('latest')
     docker.image('cg2-linux-asg/mongo-db').push('latest')
+    docker.image('cg2-linux-asg/rabbitmq').push('latest')
   }
 }
