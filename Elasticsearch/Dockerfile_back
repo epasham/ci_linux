@@ -1,0 +1,76 @@
+FROM centos:centos7.2.1511
+
+ENV ESEARCH_VERSION 6.0.0
+ENV URL_ROOT https://artifacts.elastic.co/downloads/elasticsearch
+ENV TARBALL elasticsearch-${ESEARCH_VERSION}.tar.gz
+
+ENV ESHOME /usr/share/elasticsearch
+ENV PATH ${ESHOME}/bin:$PATH
+ENV JAVA_HOME /usr/lib/jvm/jre-1.8.0-openjdk
+ENV ESUSER elasticsearch
+ENV ESGROUP elasticsearch
+
+# add our user and group first to make sure their IDs get assigned consistently, regardless of whatever dependencies get added
+RUN groupadd -r elasticsearch && useradd -r -g elasticsearch elasticsearch
+
+# grab gosu for easy step-down from root (https://github.com/tianon/gosu/releases)
+ENV GOSU_VERSION 1.10
+# grab "js-yaml" for parsing mongod's YAML config files (https://github.com/nodeca/js-yaml/releases)
+ENV JSYAML_VERSION 3.10.0
+RUN set -ex; \
+	yum install -y wget; \
+	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-amd64"; \
+	chmod +x /usr/local/bin/gosu; \
+	gosu nobody true; \
+	wget -O /js-yaml.js "https://github.com/nodeca/js-yaml/raw/${JSYAML_VERSION}/dist/js-yaml.js";
+
+RUN yum install -y java-1.8.0-openjdk-headless unzip which nc wget && \
+    yum clean all
+
+WORKDIR ${ESHOME}
+
+# Download and extract defined ES version.
+RUN curl -fsSL ${URL_ROOT}/${TARBALL} | \
+    tar zx --strip-components=1
+
+# Install search-guard
+#RUN elasticsearch-plugin install --batch com.floragunn:search-guard-6:6.0.0-17.beta1
+COPY plugins/sg6.zip /tmp
+RUN elasticsearch-plugin -s install file:///tmp/sg6.zip && rm -f /tmp/sg6.zip
+
+# Copy necessary certs
+COPY ssl/nb-key.pem ${ESHOME}/config
+COPY ssl/nb-cert.pem ${ESHOME}/config
+COPY ssl/nb-ca.pem ${ESHOME}/config
+
+RUN mkdir ${ESHOME}/data ${ESHOME}/logs && \
+   chown -R ${ESUSER}:${ESGROUP} ${ESHOME}/data ${ESHOME}/logs
+
+RUN chown -R ${ESUSER}:${ESGROUP} ${ESHOME} && \
+    chmod 700 ${ESHOME}/config 
+
+RUN chmod 777 ${ESHOME}/plugins/search-guard-6/tools/sgadmin.sh
+RUN chmod 777 ${ESHOME}/plugins/search-guard-6/tools/hash.sh
+
+COPY elasticsearch.yml log4j2.properties config/
+RUN chown ${ESUSER}:${ESGROUP} config/elasticsearch.yml config/log4j2.properties && \
+    chmod 0600 config/elasticsearch.yml config/log4j2.properties
+
+# USER 0
+
+# Set gid to 0 for elasticsearch and make group permission similar to that of user
+# This is needed, for example, for Openshift Open: https://docs.openshift.org/latest/creating_images/guidelines.html
+# and allows ES to run with an uid
+# RUN chown -R ${ESUSER}:${ESGROUP} .
+
+RUN chmod 0775 ${ESHOME} 
+
+COPY bin/docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+RUN chown ${ESUSER}:${ESGROUP} /usr/local/bin/docker-entrypoint.sh
+RUN chmod 0775 /usr/local/bin/docker-entrypoint.sh
+
+EXPOSE 9200 9300
+
+ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
+CMD ["eswrapper"]
+
