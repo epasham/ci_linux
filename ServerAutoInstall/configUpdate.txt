@@ -1,0 +1,3 @@
+mongodb 27018 ~!#$*()_+Xab7cdZ=-`;./XA?0123456~!#$*()_+Xab7cdZ=-`;./XA?0123456 ~!#$*()_+Xab7cdZ=-`;./XA?0123456~!#$*()_+Xab7cdZ=-`;./XA?0123456
+elasticsearch 9201 ~!#$*()_+Xab7cdZ=-`;./XA?0123456~!#$*()_+Xab7cdZ=-`;./XA?0123456 ~!#$*()_+Xab7cdZ=-`;./XA?0123456~!#$*()_+Xab7cdZ=-`;./XA?0123456
+licenseagent 27653

@@ -1,0 +1,3 @@
+mongodb 27017 test test
+elasticsearch 9200 test test
+licenseagent 27654
