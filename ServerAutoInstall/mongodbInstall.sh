@@ -1,13 +1,18 @@
 #!/bin/bash
+# 
+#./mongodbInstall.sh -s //192.168.33.101/US_Package/7.1a.1/2018-12-01-4_7.1a1_release/DEV/MongoRpm 192.168.28.59 rsnetbrain -d
+# \\192.168.33.101\US_Package\8.0_stable\2018-12-06-1\DEV\MongoRpm
+
 echo this is mongodb install test
-path=$1
-folder=$2
-ip=$3
-replicaSetName=$4
-config=$5 
+path=$1 #-s
+folder=$2 # \\192.168.33.101\US_Package\8.0_stable\2018-12-06-1\DEV\MongoRpm
+ip=$3 # 192.168.28.59
+replicaSetName=$4 #rsnetbrain
+config=$5  #-d
 a=-s
 con1=-d
 con2=-u
+
 if [ ${path} == $a ]
 then
   mount -t cifs -o username=netbrain,password=netbrain ${folder} /mnt/mongodb/
