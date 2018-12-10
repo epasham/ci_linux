@@ -15,6 +15,6 @@ node {
     docker.image('cg2-linux-asg/elasticsearch').push('latest')
   }
 
-  stage 'IE Installation'
+  stage 'Installation'
   echo 'Run IE Installtion Ansible script'
 }
