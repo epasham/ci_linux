@@ -7,9 +7,9 @@
 #      command: 'mount -t cifs -o username=netbrain,password=netbrain //192.168.33.101/temp/shared/ProjectToolsNG71A1/ServerAutoInstall /mnt/ServerAutoInstall/'
     - name: Linux Server Installation MangoDb
       command: '/mnt/ServerAutoInstall/mongodbInstall.sh -s //192.168.33.101/US_Package/8.0_stable/2018-12-06-1/DEV/MongoRpm 192.168.28.112 rsnetbrain -d'
-#    - name: Linux Server Installation: ElasticSearch
-#      command: '/mnt/ServerAutoInstall/elasticSearchInstall.sh -s //192.168.33.101/US_Package/8.0_stable/2018-12-06-1/DEV/Elasticsearch 192.168.28.112 -d'
-#    - name: Linux Server Installation: License Agent
-#      command: '/mnt/ServerAutoInstall/licenseAgentInstall.sh -s //192.168.33.101/US_Package/8.0_stable/2018-12-06-1/DEV/LicenseAgent -d'
-#    - name: Linux Server Installation: Service Monitor
-#      command: '/mnt/ServerAutoInstall/ServiceMonitor.sh -s //192.168.33.101/US_Package/8.0_stable/2018-12-06-1/DEV/MONITOR 192.168.28.143'
+    - name: Linux Server Installation ElasticSearch
+      command: '/mnt/ServerAutoInstall/elasticSearchInstall.sh -s //192.168.33.101/US_Package/8.0_stable/2018-12-06-1/DEV/Elasticsearch 192.168.28.112 -d'
+    - name: Linux Server Installation License Agent
+      command: '/mnt/ServerAutoInstall/licenseAgentInstall.sh -s //192.168.33.101/US_Package/8.0_stable/2018-12-06-1/DEV/LicenseAgent -d'
+    - name: Linux Server Installation Service Monitor
+      command: '/mnt/ServerAutoInstall/ServiceMonitor.sh -s //192.168.33.101/US_Package/8.0_stable/2018-12-06-1/DEV/MONITOR 192.168.28.112'
