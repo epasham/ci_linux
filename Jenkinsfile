@@ -1,17 +1,32 @@
 node {   
     stage('Build') {
-    	sh 'echo "Build stage"'
+  	checkout scm
+  	sh 'git submodule update --init' 
     }
 
-    parallel firstBranch: {
-        stage ('11111') 
+    parallel Installation: {
+        stage ('MangoDb') 
         {
     	    sh 'echo "11111 start"'
             sh 'sleep 60'
     	    sh 'echo "11111 end"'
         }
-    }, secondBranch: {
-        stage ('22222') 
+    }, Installation: {
+        stage ('ElasticSearch') 
+        {
+    	    sh 'echo "22222 start"'
+            sh 'sleep 60'
+    	    sh 'echo "22222 end"'
+        }
+    }, Installation: {
+        stage ('License Agent') 
+        {
+    	    sh 'echo "22222 start"'
+            sh 'sleep 60'
+    	    sh 'echo "22222 end"'
+        }
+    }, Installation: {
+        stage ('Service Monitor') 
         {
     	    sh 'echo "22222 start"'
             sh 'sleep 60'
