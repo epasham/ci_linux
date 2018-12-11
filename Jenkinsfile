@@ -1,20 +1,59 @@
-node {
-  stage 'Checkout Code'
-  checkout scm
-  sh 'git submodule update --init' 
+node {   
+stage('Build') {
+    sh 'echo "Build stage"'
+}
 
-  stage 'Bake Image'
-  sh './build.sh || true'
+stage('API Integration Tests') {
+    parallel Database1APIIntegrationTest: {
+        try {
+            sh 'echo "Build Database1APIIntegrationTest parallel stage"'
+        }
+        finally {
+            sh 'echo "Finished this stage"'
+        }               
 
-  stage 'Push Image'
-  docker.withRegistry('https://041444721655.dkr.ecr.us-east-1.amazonaws.com', 'ecr:us-east-1:ECR') {
-    docker.image('cg2-linux-asg/redis').push('latest')
-    docker.image('cg2-linux-asg/task-engine').push('latest')
-    docker.image('cg2-linux-asg/mongo-db').push('latest')
-    docker.image('cg2-linux-asg/rabbitmq').push('latest')
-    docker.image('cg2-linux-asg/elasticsearch').push('latest')
-  }
+    }, Database2APIIntegrationTest: {
+        try {
+            sh 'echo "Build Database2APIIntegrationTest parallel stage"'
+        }
+        finally {
+            sh 'echo "Finished this stage"'
+        }
 
-  stage 'Installation'
-  echo 'Run IE Installtion Ansible script'
+    }, Database3APIIntegrationTest: {
+        try {
+            sh 'echo "Build Database3APIIntegrationTest parallel stage"'
+        }
+        finally {
+            sh 'echo "Finished this stage"'
+        }
+    }
+}
+
+stage('System Tests') {
+    parallel Database1APIIntegrationTest: {
+        try {
+            sh 'echo "Build Database1APIIntegrationTest parallel stage"'
+        }
+        finally {
+            sh 'echo "Finished this stage"'
+        }               
+
+    }, Database2APIIntegrationTest: {
+        try {
+            sh 'echo "Build Database2APIIntegrationTest parallel stage"'
+        }
+        finally {
+            sh 'echo "Finished this stage"'
+        }
+
+    }, Database3APIIntegrationTest: {
+        try {
+            sh 'echo "Build Database3APIIntegrationTest parallel stage"'
+        }
+        finally {
+            sh 'echo "Finished this stage"'
+        }
+    }
+}
 }
