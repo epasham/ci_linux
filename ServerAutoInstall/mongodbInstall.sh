@@ -33,25 +33,20 @@ umount -l /mnt/mongodb
 echo umount  ${path} successfully
 
 cd /etc/
-#tar -xvf mongodb-linux-x86_64-rhel7-3.6.4.tar.gz
 tar -xvf mongodb-linux-x86_64-rhel7-3.6.4.tar.gz
-#cd /etc/mongodb-linux-x86_64-rhel7-3.6.4
 cd /etc/MongoDB
 
 echo begain to update config
 sed -i -e "s|^BindIp.*|BindIp             ${ip}|" install_mongodb.conf
 sed -i -e "s|^ReplicaSetName.*|ReplicaSetName             ${replicaSetName}|" install_mongodb.conf
 
-#cd /home/mongodbInstall
-cd /mnt/ServerAutoInstall
+cd /root/ci/installation
 if [ ${config} == $con1 ]
 then
   DBport=`sed -n 1p configDefault.txt | awk '{print $2}'`
   DBname=`sed -n 1p configDefault.txt | awk '{print $3}'`
   DBpassword=`sed -n 1p configDefault.txt | awk '{print $4}'` 
   
-  
-#cd /etc/mongodb-linux-x86_64-rhel7-3.6.4
   cd /etc/MongoDB
   sed -i -e "s|^DBPort.*|DBPort             ${DBport}|" install_mongodb.conf
   sed -i -e "s|^DBUser.*|DBUser             ${DBname}|" install_mongodb.conf
@@ -66,7 +61,6 @@ then
   DBname=`sed -n 1p configUpdate.txt | awk '{print $3}'`
   DBpassword=`sed -n 1p configUpdate.txt | awk '{print $4}'`
 
-#  cd /etc/mongodb-linux-x86_64-rhel7-3.6.4
   cd /etc/MongoDB
   sed -i -e "s|^DBPort.*|DBPort             ${DBport}|" install_mongodb.conf
   sed -i -e "s|^DBUser.*|DBUser             ${DBname}|" install_mongodb.conf
@@ -77,6 +71,5 @@ echo begain to install mongodb
 /etc/MongoDB/install.sh 
 
 echo "######### check  mongodb services #########"
-#cd /home/mongodbInstall
 yum install numactl-2.0.9 -y
 /mnt/ServerAutoInstall/servicesCheck.sh mongod
