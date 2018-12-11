@@ -4,14 +4,18 @@ node {
     }
 
     parallel firstBranch: {
-        stage ('Starting 11111') 
+        stage ('11111') 
         {
+    	    sh 'echo "11111 start"'
             sh 'sleep 60'
+    	    sh 'echo "11111 end"'
         }
     }, secondBranch: {
-        stage ('Starting 22222') 
+        stage ('22222') 
         {
+    	    sh 'echo "22222 start"'
             sh 'sleep 60'
+    	    sh 'echo "22222 end"'
         }
     }
 }
