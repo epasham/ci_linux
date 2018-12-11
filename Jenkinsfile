@@ -4,28 +4,28 @@ node {
   	sh 'git submodule update --init' 
     }
 
-    parallel Installation: {
+    parallel InstallationMangoDb: {
         stage ('MangoDb') 
         {
     	    sh 'echo "11111 start"'
             sh 'sleep 60'
     	    sh 'echo "11111 end"'
         }
-    }, Installation: {
+    }, InstallationElasticSearch: {
         stage ('ElasticSearch') 
         {
     	    sh 'echo "22222 start"'
             sh 'sleep 60'
     	    sh 'echo "22222 end"'
         }
-    }, Installation: {
+    }, InstallationLicenseAgent: {
         stage ('License Agent') 
         {
     	    sh 'echo "22222 start"'
             sh 'sleep 60'
     	    sh 'echo "22222 end"'
         }
-    }, Installation: {
+    }, InstallationServiceMonitor: {
         stage ('Service Monitor') 
         {
     	    sh 'echo "22222 start"'
