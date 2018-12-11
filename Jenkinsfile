@@ -7,30 +7,26 @@ node {
     parallel InstallationMangoDb: {
         stage ('MangoDb') 
         {
-    	    sh 'echo "11111 start"'
+    	    sh 'echo "-----------mangodb----------"'
             sh 'sleep 60'
-    	    sh 'echo "11111 end"'
         }
     }, InstallationElasticSearch: {
         stage ('ElasticSearch') 
         {
-    	    sh 'echo "22222 start"'
+    	    sh 'echo "----------ElasticSearch--------"'
             sh 'sleep 60'
-    	    sh 'echo "22222 end"'
         }
     }, InstallationLicenseAgent: {
         stage ('License Agent') 
         {
-    	    sh 'echo "22222 start"'
+    	    sh 'echo "-----------License Agent----------"'
             sh 'sleep 60'
-    	    sh 'echo "22222 end"'
         }
     }, InstallationServiceMonitor: {
         stage ('Service Monitor') 
         {
-    	    sh 'echo "22222 start"'
+    	    sh 'echo "--------- Service Monitor-----------"'
             sh 'sleep 60'
-    	    sh 'echo "22222 end"'
         }
     }
 }
