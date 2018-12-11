@@ -1,5 +1,5 @@
 node {   
-    stage('Build') {
+    stage('Code Checkout') {
   	checkout scm
   	sh 'git submodule update --init' 
     }
@@ -7,26 +7,23 @@ node {
     parallel InstallationMangoDb: {
         stage ('MangoDb') 
         {
-    	    sh 'echo "-----------mangodb----------"'
-            sh 'sleep 60'
+            sh 'ansible-playbook playbook-mangodb.yml'
         }
     }, InstallationElasticSearch: {
         stage ('ElasticSearch') 
         {
-    	    sh 'echo "----------ElasticSearch--------"'
-            sh 'sleep 60'
+            sh 'ansible-playbook playbook-elasticsearch.yml'
         }
     }, InstallationLicenseAgent: {
         stage ('License Agent') 
         {
-    	    sh 'echo "-----------License Agent----------"'
-            sh 'sleep 60'
+            sh 'ansible-playbook playbook-licenseagent.yml'
         }
     }, InstallationServiceMonitor: {
         stage ('Service Monitor') 
         {
-    	    sh 'echo "--------- Service Monitor-----------"'
-            sh 'sleep 60'
+            sh 'ansible-playbook playbook-servicemonitor.yml'
         }
     }
 }
+

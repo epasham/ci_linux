@@ -1,0 +1,59 @@
+node {   
+stage('Build') {
+    sh 'echo "Build stage"'
+}
+
+stage('Installation') {
+    parallel MongoDb: {
+        try {
+            sh 'echo "Build Database1APIIntegrationTest parallel stage"'
+        }
+        finally {
+            sh 'echo "Finished this stage"'
+        }               
+
+    }, Database2APIIntegrationTest: {
+        try {
+            sh 'echo "Build Database2APIIntegrationTest parallel stage"'
+        }
+        finally {
+            sh 'echo "Finished this stage"'
+        }
+
+    }, Database3APIIntegrationTest: {
+        try {
+            sh 'echo "Build Database3APIIntegrationTest parallel stage"'
+        }
+        finally {
+            sh 'echo "Finished this stage"'
+        }
+    }
+}
+
+stage('System Tests') {
+    parallel Database1APIIntegrationTest: {
+        try {
+            sh 'echo "Build Database1APIIntegrationTest parallel stage"'
+        }
+        finally {
+            sh 'echo "Finished this stage"'
+        }               
+
+    }, Database2APIIntegrationTest: {
+        try {
+            sh 'echo "Build Database2APIIntegrationTest parallel stage"'
+        }
+        finally {
+            sh 'echo "Finished this stage"'
+        }
+
+    }, Database3APIIntegrationTest: {
+        try {
+            sh 'echo "Build Database3APIIntegrationTest parallel stage"'
+        }
+        finally {
+            sh 'echo "Finished this stage"'
+        }
+    }
+}
+}
