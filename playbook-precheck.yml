@@ -1,0 +1,12 @@
+- hosts: linux
+  remote_user: root                         
+  tasks:
+    - name: Pre-Chean
+      command: 'rm -rf /root/ci/installation/'
+    - name: Pre-Checking
+      command: 'mkdir -p /root/ci/installation/'    
+    - copy:
+        src: ./ServerAutoInstall/
+        dest: /root/ci/installation/
+        owner: root
+        mode: 777
