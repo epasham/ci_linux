@@ -8,6 +8,7 @@ config=$5
 a=-s
 con1=-d
 con2=-u
+mkdir -p /mnt/mongodb/
 if [ ${path} == $a ]
 then
   mount -t cifs -o username=netbrain,password=netbrain ${folder} /mnt/mongodb/
