@@ -1,59 +1,17 @@
 node {   
-stage('Build') {
-    sh 'echo "Build stage"'
-}
+    stage('Build') {
+    	sh 'echo "Build stage"'
+    }
 
-stage('API Integration Tests') {
-    parallel Database1APIIntegrationTest: {
-        try {
-            sh 'echo "Build Database1APIIntegrationTest parallel stage"'
+    parallel firstBranch: {
+        stage ('Starting 11111') 
+        {
+            sh 'echo "11111"'
         }
-        finally {
-            sh 'echo "Finished this stage"'
-        }               
-
-    }, Database2APIIntegrationTest: {
-        try {
-            sh 'echo "Build Database2APIIntegrationTest parallel stage"'
-        }
-        finally {
-            sh 'echo "Finished this stage"'
-        }
-
-    }, Database3APIIntegrationTest: {
-        try {
-            sh 'echo "Build Database3APIIntegrationTest parallel stage"'
-        }
-        finally {
-            sh 'echo "Finished this stage"'
+    }, secondBranch: {
+        stage ('Starting 22222') 
+        {
+            sh 'echo "22222"'
         }
     }
-}
-
-stage('System Tests') {
-    parallel Database1APIIntegrationTest: {
-        try {
-            sh 'echo "Build Database1APIIntegrationTest parallel stage"'
-        }
-        finally {
-            sh 'echo "Finished this stage"'
-        }               
-
-    }, Database2APIIntegrationTest: {
-        try {
-            sh 'echo "Build Database2APIIntegrationTest parallel stage"'
-        }
-        finally {
-            sh 'echo "Finished this stage"'
-        }
-
-    }, Database3APIIntegrationTest: {
-        try {
-            sh 'echo "Build Database3APIIntegrationTest parallel stage"'
-        }
-        finally {
-            sh 'echo "Finished this stage"'
-        }
-    }
-}
 }
