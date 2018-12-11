@@ -2,13 +2,12 @@
 echo this is elasticsearch server install test
 path=$1
 folder=$2
-ip=$3
+ip=$(hostname -I)
 config=$4
 a=-s
 con1=-d
 con2=-u
 
-rm -rf /mnt/elasticsearch/
 mkdir -p /mnt/elasticsearch/
 
 if [ ${path} == $a ]
@@ -30,7 +29,6 @@ else
   echo mount ${path}/${filename}/${folder}/Elasticsearch
 fi
 
-rm -rf /home/elasticsearchInstall/*
 rm -rf /home/elasticsearchInstall
 mkdir -p /home/elasticsearchInstall
 cp -rf /mnt/elasticsearch/* /home/elasticsearchInstall/
@@ -52,7 +50,7 @@ echo begain to update conf
 echo begain to update elasticsearch config
 sed -i -e "s|^BindIp.*|BindIp             ${ip}|" install_elasticsearch.conf
 
-cd /mnt/ServerAutoInstall
+cd /root/Code/ci_linux/ServerAutoInstall
 if [ ${config} == $con1 ]
 then 
   ESport=`sed -n 2p configDefault.txt | awk '{print $2}'`
@@ -83,4 +81,4 @@ echo install Elaticsearch successfully
 
 echo "####### check install elasticsearch ########"
 echo "####### check install elasticsearch ########"
-/mnt/ServerAutoInstall/servicesCheck.sh elasticsearch
+/root/Code/ci_linux/ServerAutoInstall/servicesCheck.sh elasticsearch
