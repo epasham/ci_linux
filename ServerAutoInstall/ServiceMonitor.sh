@@ -2,10 +2,11 @@
 echo this is ServiceMonitor install test
 path=$1
 folder=$2
-ip=$3
+ip=$(hostname -I)
 #replicaSetName=$4 
 #testname=$5
 a=-s
+mkdir /mnt/servicemonitor/
 if [ ${path} == $a ]
 then
   mount -t cifs -o username=netbrain,password=netbrain ${folder} /mnt/servicemonitor/
