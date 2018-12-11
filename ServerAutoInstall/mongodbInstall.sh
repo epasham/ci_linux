@@ -2,7 +2,10 @@
 echo this is mongodb install test
 path=$1
 folder=$2
-ip=$3
+ip=$(hostname -I)
+echo '######################'
+echo $ip
+echo '######################'
 replicaSetName=$4
 config=$5 
 a=-s
