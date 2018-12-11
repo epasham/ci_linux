@@ -50,7 +50,7 @@ echo begain to update conf
 echo begain to update elasticsearch config
 sed -i -e "s|^BindIp.*|BindIp             ${ip}|" install_elasticsearch.conf
 
-cd /root/Code/ci_linux/ServerAutoInstall
+cd /root/ci/installation/
 if [ ${config} == $con1 ]
 then 
   ESport=`sed -n 2p configDefault.txt | awk '{print $2}'`
@@ -80,5 +80,4 @@ echo begain to install Elaticsearch server
 echo install Elaticsearch successfully
 
 echo "####### check install elasticsearch ########"
-echo "####### check install elasticsearch ########"
-/root/Code/ci_linux/ServerAutoInstall/servicesCheck.sh elasticsearch
+/root/ci/installation/servicesCheck.sh elasticsearch
