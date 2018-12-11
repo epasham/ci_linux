@@ -72,4 +72,5 @@ echo begain to install mongodb
 
 echo "######### check  mongodb services #########"
 yum install numactl-2.0.9 -y
-/mnt/ServerAutoInstall/servicesCheck.sh mongod
+/root/ci/installation/servicesCheck.sh mongod
+
