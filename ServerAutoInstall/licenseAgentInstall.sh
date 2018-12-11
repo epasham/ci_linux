@@ -36,7 +36,7 @@ cd /etc
 tar -xvf netbrain-license-linux-x86_64-rhel7.tar.gz 
 
 echo begain to update licenseAgent config
-cd /mnt/ServerAutoInstall
+cd /root/ci/installation
 if [ ${config} == $con1 ]
 then 
   LSport=`sed -n 3p configDefault.txt | awk '{print $2}'`
@@ -52,8 +52,6 @@ then
 fi
 
 echo begain to install licenseAgent
-
-#./install.sh > /dev/null 2>&1
 ./install.sh 
 
 sleep 3 
