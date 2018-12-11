@@ -5,7 +5,7 @@ node {
     }
 
     stage('Pre-Checking') {
-  	#sh 'if ! mount | grep -q ServerAutoInstall; then ansible-playbook playbook-precheck.yml fi'
+#  	sh 'if ! mount | grep -q ServerAutoInstall; then ansible-playbook playbook-precheck.yml fi'
   	sh 'echo "1111"'
     }
 
