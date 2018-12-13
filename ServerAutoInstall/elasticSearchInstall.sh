@@ -9,6 +9,7 @@ con1=-d
 con2=-u
 
 mkdir -p /mnt/elasticsearch/
+mkdir -p /etc/nb-elasticsearch/backup/
 
 if [ ${path} == $a ]
 then
@@ -33,6 +34,20 @@ rm -rf /home/elasticsearchInstall
 mkdir -p /home/elasticsearchInstall
 cp -rf /mnt/elasticsearch/* /home/elasticsearchInstall/
 
+# checking if they are same pkg
+newpkgname=$( ls /mnt/elasticsearch/ )
+oldpkgname=$( ls /etc/nb-elasticsearch/backup/ )
+if [ "$newpkgname" = "$oldpkgname" ]
+then
+    exit
+fi
+# end of checking
+pkgname=$( ls /mnt/elasticsearch/ )
+
+mkdir -p /etc/nb-elasticsearch/backup/
+rm -rf /etc/nb-elasticsearch/backup/*
+cp -R /mnt/elasticsearch/* /etc/nb-elasticsearch/backup/
+
 echo copy Elasticsearch to local successfully
 umount -l /mnt/elasticsearch
 echo umount  ${path} successfull
@@ -40,7 +55,7 @@ echo umount  ${path} successfull
 cd /home/elasticsearchInstall
 
 echo uzip install.tar and get jdk packege name
-tar -xvf elasticsearch-linux-rhel7-6.0.0.tar.gz
+tar -xvf $pkgname
 filename=`find -name \*.tar.gz`
 echo ${filename}
 
