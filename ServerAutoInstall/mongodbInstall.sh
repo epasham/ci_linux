@@ -8,7 +8,10 @@ config=$5
 a=-s
 con1=-d
 con2=-u
+#
 mkdir -p /mnt/mongodb/
+mkdir -p /etc/nb-mongodb/backup/
+
 if [ ${path} == $a ]
 then
   mount -t cifs -o username=netbrain,password=netbrain ${folder} /mnt/mongodb/
@@ -28,13 +31,28 @@ else
   echo mount ${path}/${filename}/${folder}/MongoRpm successfully
 fi
 
+# checking if they are same pkg
+newpkgname=$( ls /mnt/mongodb/ )
+oldpkgname=$( ls /etc/nb-mongodb/backup/ )
+if [ "$newpkgname" = "$oldpkgname" ]
+then
+    exit
+fi
+# end of checking 
+
 cp -R /mnt/mongodb/* /etc/
+pkgname=$( ls /mnt/mongodb/ )
+
+mkdir -p /etc/nb-mongodb/backup/
+rm -rf /etc/nb-mongodb/backup/*
+cp -R /mnt/mongodb/* /etc/nb-mongodb/backup/
+
 echo copy mongodb to directory etc successfully
 umount -l /mnt/mongodb
 echo umount  ${path} successfully
 
 cd /etc/
-tar -xvf mongodb-linux-x86_64-rhel7-3.6.4.tar.gz
+tar -xvf $pkgname
 cd /etc/MongoDB
 
 echo begain to update config
