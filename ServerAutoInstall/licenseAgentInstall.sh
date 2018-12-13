@@ -7,6 +7,7 @@ a=-s
 con1=-d
 con2=-u
 mkdir -p /mnt/licenseagent/
+mkdir -p /mnt/nb-licenseagent/backup/
 
 if [ ${path} == $a ]
 then
@@ -26,14 +27,30 @@ else
   mount -t cifs -o username=netbrain,password=netbrain ${path}/${filename}/${folder}/LicenseAgent /mnt/licenseagent/
   echo mount ${path}/${filename}/${folder}/LicenseAgent successfully
 fi
+#
+# checking if they are same pkg
+newpkgname=$( ls /mnt/licenseagent/ )
+oldpkgname=$( ls /etc/nb-licenseagent/backup/ )
+if [ "$newpkgname" = "$oldpkgname" ]
+then
+    exit
+fi
+# end of checking
+cp -R /mnt/licenseagent/* /etc/
+pkgname=$( ls /mnt/licenseagent/ )
 
+mkdir -p /etc/nb-licenseagent/backup/
+rm -rf /etc/nb-licenseagent/backup/*
+cp -R /mnt/licenseagent/* /etc/nb-licenseagent/backup/
+
+#
 cp -Rf /mnt/licenseagent/* /etc/
 echo copy licenseAgent to directory home/licenseagentInstall successfully
 umount -l /mnt/licenseagent
 echo umount  ${path} successfully
 
 cd /etc
-tar -xvf netbrain-license-linux-x86_64-rhel7.tar.gz 
+tar -xvf $pkgname
 
 echo begain to update licenseAgent config
 cd /root/ci/installation
