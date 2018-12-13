@@ -6,7 +6,9 @@ ip=$(hostname -I)
 #replicaSetName=$4 
 #testname=$5
 a=-s
-mkdir /mnt/servicemonitor/
+mkdir -p /mnt/servicemonitor/
+mkdir -p /mnt/nb-servicemonitor/backup
+
 if [ ${path} == $a ]
 then
   mount -t cifs -o username=netbrain,password=netbrain ${folder} /mnt/servicemonitor/
@@ -25,14 +27,30 @@ else
   mount -t cifs -o username=netbrain,password=netbrain ${path}/${filename}/${folder}/MONITOR /mnt/servicemonitor/
   echo mount ${path}/${filename}/${folder}/MONITOR successfully
 fi
+#
+# checking if they are same pkg
+newpkgname=$( ls /mnt/servicemonitor/ )
+oldpkgname=$( ls /etc/nb-servicemonitor/backup/ )
+if [ "$newpkgname" = "$oldpkgname" ]
+then
+    exit
+fi
+# end of checking
+cp -R /mnt/servicemonitor/* /etc/
+pkgname=$( ls /mnt/servicemonitor/ )
 
+mkdir -p /etc/nb-servicemonitor/backup/
+rm -rf /etc/nb-servicemonitor/backup/*
+cp -R /mnt/servicemonitor/* /etc/nb-servicemonitor/backup/
+
+#
 cp -R /mnt/servicemonitor/* /etc/
 echo copy monitor to directory etc successfully
 umount -l /mnt/servicemonitor
 echo umount  ${path} successfully
 
 cd /etc/
-tar -xvf netbrain-servicemonitoragent-linux-x86_64-rhel7.tar.gz
+tar -xvf $pkgname
 cd /etc/ServiceMonitorAgent/
 sed -i -e "s|^Server_Url.*|Server_Url             https://${ip}/ServicesAPI|" install_monitor.conf
 
