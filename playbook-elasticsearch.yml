@@ -2,4 +2,4 @@
   remote_user: root                         
   tasks:
     - name: Linux Server Installation ElasticSearch
-      command: '/root/ci/installation/elasticSearchInstall.sh -s //192.168.33.101/US_Package/8.0_stable/2019-03-26-1/DEV/Elasticsearch localhost -d'
+      command: '/root/ci/installation/elasticSearchInstall.sh -s //192.168.33.101/US_Package/8.0_stable/2019-03-26-2/DEV/Elasticsearch localhost -d'

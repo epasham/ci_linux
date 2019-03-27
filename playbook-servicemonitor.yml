@@ -2,4 +2,4 @@
   remote_user: root                         
   tasks:
     - name: Linux Server Installation Service Monitor
-      command: '/root/ci/installation/ServiceMonitor.sh -s //192.168.33.101/US_Package/8.0_stable/2019-03-26-1/DEV/MONITOR localhost'
+      command: '/root/ci/installation/ServiceMonitor.sh -s //192.168.33.101/US_Package/8.0_stable/2019-03-26-2/DEV/MONITOR localhost'
